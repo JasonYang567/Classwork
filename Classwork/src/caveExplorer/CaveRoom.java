@@ -36,6 +36,8 @@ public class CaveRoom {
 		contents = defaultContents;
 	}
 	
+
+
 	/** This is how we join rooms together
 	 * 
 	 * @param direction
@@ -164,7 +166,15 @@ public class CaveRoom {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public String getDirections() {
+		return directions;
+	}
 
+	public void setDirections(String directions) {
+		this.directions = directions;
+	}
+	
 	public String getContents() {
 		return contents;
 	}
@@ -175,6 +185,11 @@ public class CaveRoom {
 
 	public void setDefaultContents(String defaultContents) {
 		this.defaultContents = defaultContents;
+	}
+
+	public Door getDoor(int direction) {
+		// TODO Auto-generated method stub
+		return doors[direction];
 	}
 
 	

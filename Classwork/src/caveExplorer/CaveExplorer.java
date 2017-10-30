@@ -14,7 +14,7 @@ public class CaveExplorer {
 	{
 		in = new Scanner(System.in);
 		CaveRoom.setUpCaves();//create caves and starting room
-		inventory = new Inventory;
+		inventory = new Inventory();
 		startExploring();
 	}
 	
@@ -24,7 +24,7 @@ public class CaveExplorer {
 	
 	public static void startExploring() {
 		while(playing) {
-			print(inventory.getDescription);
+			print(inventory.getDescription());
 			print(currentRoom.getDescription());
 			print(currentRoom.getDirections());
 			print("What would you like to do?");

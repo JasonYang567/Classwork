@@ -3,7 +3,7 @@ package caveExplorer;
 public class NPC {
 
 	public NPC() {
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public boolean isActive() {
@@ -15,17 +15,14 @@ public class NPC {
 	}
 
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public String getInactiveDescription() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public String getSymbol() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

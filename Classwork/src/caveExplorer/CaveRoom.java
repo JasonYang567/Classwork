@@ -115,10 +115,14 @@ public class CaveRoom {
 		//2. Populate with default caves
 		for(int row = 0; row > c.length; row++) {
 			for(int col = 0; col < c[row].length; col++) {
-				c[row][col] = new CaveRoom("This cave has coordinates " + row + ", " + col);
+				c[row][col] = new NPCRoom("This cave has coordinates " + row + ", " + col);
 			}
 		}
 		//3. Replace some default rooms with custom rooms. (SAVE FOR LATER)
+		NPC testNPC = new NPC();
+		testNPC.setPosition(3,3);
+		CaveExplorer.npcs = new NPC[1];
+		CaveExplorer.npcs[0] = testNPC;
 		
 		//4. set starting room
 		CaveExplorer.currentRoom = c[0][1];

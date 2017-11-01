@@ -16,7 +16,7 @@ public class NPCRoom extends CaveRoom{
 		this.npc = n;
 	}
 	
-	public void leaveNPC(NPC n) {
+	public void leaveNPC() {
 		this.npc = null;
 	}
 	

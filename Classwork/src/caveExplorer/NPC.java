@@ -57,7 +57,7 @@ public class NPC {
 	}
 
 	public void setPosition(int row, int col) {
-		//check to avoid ArayIndexOutOfBoundsException
+		//check to avoid ArrayIndexOutOfBoundsException
 		if(row >= 0 && row < floor.length && col >= 0 
 				&& col < floor[row].length && floor[row][col] instanceof NPCRoom
 				) {

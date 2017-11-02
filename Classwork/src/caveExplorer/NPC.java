@@ -71,8 +71,8 @@ public class NPC {
 	public void autoMove() {
 		if(active) {
 			int[] move = calculateMove();
-			int newRow = currentRow + move[0];
-			int newCol = currentCol + move[1];
+			int newRow = move[0];
+			int newCol = move[1];
 			setPosition(newRow, newCol);
 		}
 		
@@ -80,7 +80,15 @@ public class NPC {
 
 	private int[] calculateMove() {
 		int[][] possibleMoves = {{-1,0},{0,1},{1,0},{0,-1}};
-		index = ;
-		return null;
+		int index = (int)(Math.random()*possibleMoves.length);
+		int[] newPosition = new int[2];
+		newPosition[0] = currentRow + possibleMoves[index][0];
+		newPosition[1] = currentRow + possibleMoves[index][1];
+		while(currentRoom.getDoor(index) == null || !(CaveExplorer.caves[newPosition[0]][newPosition[1]] instanceof NPCRoom)){
+			index = (int)(Math.random()*possibleMoves.length);
+			newPosition[0] = currentRow + possibleMoves[index][0];
+			newPosition[1] = currentRow + possibleMoves[index][1];
+		}
+		return newPosition;
 	}
 }

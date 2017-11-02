@@ -3,27 +3,27 @@ package caveExplorer;
 import java.util.Scanner;
 
 public class CaveExplorer {
+
+	public static CaveRoom[][] caves;
+	public static Scanner in;//for user input
+	public static CaveRoom currentRoom;//changes as the user moves
+	public static Inventory inventory;
+	public static boolean playing = true;
+	public static NPC[] npcs;
 	
-	public static CaveRoom[][] caves; //every room in the cave
-	public static Scanner in; //user input
-	public static CaveRoom currentRoom; //changes based on how the user navigated
-	public static Inventory inventory; //where all objects found in caves are kept
-	private static boolean playing = true;
-	private static NPC[] npcs;
 	
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		in = new Scanner(System.in);
-		CaveRoom.setUpCaves();//create caves and starting room
+		CaveRoom.setUpCaves();//creates caves and starting room
 		inventory = new Inventory();
 		startExploring();
 	}
-	
+
 	public static void print(String s) {
-		System.out.println(s);//LATER: consider replacing with the more sophisticated "printMulti"
+		System.out.println(s);//LATER: consider replacing with the more sophistocated "printMultiLine"
 	}
 	
-	public static void startExploring() {
+	private static void startExploring() {
 		while(playing) {
 			moveNPCs();
 			print(inventory.getDescription());
@@ -33,11 +33,12 @@ public class CaveExplorer {
 			currentRoom.interpretInput(in.nextLine());
 		}
 	}
-	
+
 	private static void moveNPCs() {
 		for(NPC n: npcs) {
 			n.autoMove();
 		}
-		Inventory.updateMap();
+		inventory.updateMap();
 	}
+
 }

@@ -7,14 +7,9 @@ public class FibonacciSequence {
 	}
 	
 	private static int FibonacciSequence(int num) {
-		if(num == 0) {
+		if(num <= 1) {
 			return 1;
 		}
-		if(num < 0) {
-			return 0;
-		}
-		else {
-			return FibonacciSequence(num-1) + FibonacciSequence(num-2);
-		}
+		return FibonacciSequence(num-1) + FibonacciSequence(num-2);
 	}
 }
